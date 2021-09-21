@@ -1,0 +1,140 @@
+{% extends 'base.html' %} {% block title %}HOME{% endblock %} {% block content%}
+<h1 style="text-align: center">Home Page</h1>
+<div class="table-responsive">
+  <table class="table table-striped table-dark table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Mountain</th>
+        <th scope="col"><p id="date"></p></th>
+        <th scope="col"><p id="date1"></p></th>
+        <th scope="col"><p id="date2"></p></th>
+        <th scope="col"><p id="date3"></p></th>
+        <th scope="col"><p id="date4"></p></th>
+        <th scope="col"><p id="date5"></p></th>
+        <th scope="col"><p id="date6"></p></th>
+        <th scope="col"><p id="date7"></p></th>
+        <th scope="col"><p id="date8"></p></th>
+        <th scope="col"><p id="date9"></p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="col">Deepest of Day</th>
+        <th scope="row">{{deepest.name}}</th>
+        <td>{{deepest.forecast0}}</td>
+        <td>{{deepest.forecast1}}</td>
+        <td>{{deepest.forecast2}}</td>
+        <td>{{deepest.forecast3}}</td>
+        <td>{{deepest.forecast4}}</td>
+        <td>{{deepest.forecast5}}</td>
+        <td>{{deepest.forecast6}}</td>
+        <td>{{deepest.forecast7}}</td>
+        <td>{{deepest.forecast8}}</td>
+        <td>{{deepest.forecast9}}</td>
+      </tr>
+      <tr>
+        <th scope="col">Your Choice</th>
+        <th scope="row">{{chosenLocal.name}}</th>
+         <td>{{chosenLocal.forecast0}}</td>
+        <td>{{chosenLocal.forecast1}}</td>
+        <td>{{chosenLocal.forecast2}}</td>
+        <td>{{chosenLocal.forecast3}}</td>
+        <td>{{chosenLocal.forecast4}}</td>
+        <td>{{chosenLocal.forecast5}}</td>
+        <td>{{chosenLocal.forecast6}}</td>
+        <td>{{chosenLocal.forecast7}}</td>
+        <td>{{chosenLocal.forecast8}}</td>
+        <td>{{chosenLocal.forecast9}}</td>
+      </tr>
+      <tr>
+        <th scope="col">Ikon</th>
+        <th scope="row">{{deepIkon.name}}</th>
+         <td>{{deepIkon.forecast0}}</td>
+        <td>{{deepIkon.forecast1}}</td>
+        <td>{{deepIkon.forecast2}}</td>
+        <td>{{deepIkon.forecast3}}</td>
+        <td>{{deepIkon.forecast4}}</td>
+        <td>{{deepIkon.forecast5}}</td>
+        <td>{{deepIkon.forecast6}}</td>
+        <td>{{deepIkon.forecast7}}</td>
+        <td>{{deepIkon.forecast8}}</td>
+        <td>{{deepIkon.forecast9}}</td>
+      </tr>
+      <tr>
+        <th scope="col">Epic</th>
+        <th scope="row">{{deepEpic.name}}</th>
+         <td>{{deepEpic.forecast0}}</td>
+        <td>{{deepEpic.forecast1}}</td>
+        <td>{{deepEpic.forecast2}}</td>
+        <td>{{deepEpic.forecast3}}</td>
+        <td>{{deepEpic.forecast4}}</td>
+        <td>{{deepEpic.forecast5}}</td>
+        <td>{{deepEpic.forecast6}}</td>
+        <td>{{deepEpic.forecast7}}</td>
+        <td>{{deepEpic.forecast8}}</td>
+        <td>{{deepEpic.forecast9}}</td>
+      </tr>
+        <tr>
+          <th scope="col">Mountain Collective</th>
+          <th scope="row">{{deepMC.name}}</th>
+           <td>{{deepMC.forecast0}}</td>
+          <td>{{deepMC.forecast1}}</td>
+          <td>{{deepMC.forecast2}}</td>
+          <td>{{deepMC.forecast3}}</td>
+          <td>{{deepMC.forecast4}}</td>
+          <td>{{deepMC.forecast5}}</td>
+          <td>{{deepMC.forecast6}}</td>
+          <td>{{deepMC.forecast7}}</td>
+          <td>{{deepMC.forecast8}}</td>
+          <td>{{deepMC.forecast9}}</td>
+        </tr>
+          <tr>
+            <th scope="col">Powder Alliance</th>
+            <th scope="row">{{deepPowder.name}}</th>
+             <td>{{deepPowder.forecast0}}</td>
+            <td>{{deepPowder.forecast1}}</td>
+            <td>{{deepPowder.forecast2}}</td>
+            <td>{{deepPowder.forecast3}}</td>
+            <td>{{deepPowder.forecast4}}</td>
+            <td>{{deepPowder.forecast5}}</td>
+            <td>{{deepPowder.forecast6}}</td>
+            <td>{{deepPowder.forecast7}}</td>
+            <td>{{deepPowder.forecast8}}</td>
+            <td>{{deepPowder.forecast9}}</td>
+          </tr>
+            <tr>
+              <th scope="col">Indy</th>
+              <th scope="row">{{deepIndy.name}}</th>
+               <td>{{deepIndy.forecast0}}</td>
+              <td>{{deepIndy.forecast1}}</td>
+              <td>{{deepIndy.forecast2}}</td>
+              <td>{{deepIndy.forecast3}}</td>
+              <td>{{deepIndy.forecast4}}</td>
+              <td>{{deepIndy.forecast5}}</td>
+              <td>{{deepIndy.forecast6}}</td>
+              <td>{{deepIndy.forecast7}}</td>
+              <td>{{deepIndy.forecast8}}</td>
+              <td>{{deepIndy.forecast9}}</td>
+            </tr>
+    </tbody>
+  </table>
+</div>
+</br>
+<form method="POST">
+<div style="text-align: center">
+    <h2>Select Mountain</h2>
+    <select name="chosen" style="margin: 1em; height: 2.5em; width: 45%">
+      {% for location in locations %}
+      <option value="{{ location.name }}">{{ location.name }}</option>
+      {% endfor %}
+    </select>
+    <br/>
+    <div style="text-align: right;">
+      <button  type="submit" class="btn btn-primary btn-lg" >Get Forecast</button>
+    </div>
+  </form>
+</div>
+<br />
+<script src="{{ url_for('static', filename='javascript/dateIncrement.js') }}">// calculates future dates</script>
+{% endblock %}

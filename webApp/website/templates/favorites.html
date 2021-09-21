@@ -1,0 +1,161 @@
+{% extends 'base.html' %} {% block title %}Favorites{% endblock %} {% block
+content %}
+<h1 style="text-align: center">Favorites</h1>
+<div class="table-responsive" style="overflow-x: auto">
+  <table class="table table-striped table-dark table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Mountain</th>
+        <th scope="col"><p id="date"></p></th>
+        <th scope="col"><p id="date1"></p></th>
+        <th scope="col"><p id="date2"></p></th>
+        <th scope="col"><p id="date3"></p></th>
+        <th scope="col"><p id="date4"></p></th>
+        <th scope="col"><p id="date5"></p></th>
+        <th scope="col"><p id="date6"></p></th>
+        <th scope="col"><p id="date7"></p></th>
+        <th scope="col"><p id="date8"></p></th>
+        <th scope="col"><p id="date9"></p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{ current_user.fav1 }}</th>
+        <td>{{favorite1.forecast0}}</td>
+        <td>{{favorite1.forecast1}}</td>
+        <td>{{favorite1.forecast2}}</td>
+        <td>{{favorite1.forecast3}}</td>
+        <td>{{favorite1.forecast4}}</td>
+        <td>{{favorite1.forecast5}}</td>
+        <td>{{favorite1.forecast6}}</td>
+        <td>{{favorite1.forecast7}}</td>
+        <td>{{favorite1.forecast8}}</td>
+        <td>{{favorite1.forecast9}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ current_user.fav2 }}</th>
+        <td>{{favorite2.forecast0}}</td>
+        <td>{{favorite2.forecast1}}</td>
+        <td>{{favorite2.forecast2}}</td>
+        <td>{{favorite2.forecast3}}</td>
+        <td>{{favorite2.forecast4}}</td>
+        <td>{{favorite2.forecast5}}</td>
+        <td>{{favorite2.forecast6}}</td>
+        <td>{{favorite2.forecast7}}</td>
+        <td>{{favorite2.forecast8}}</td>
+        <td>{{favorite2.forecast9}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ current_user.fav3 }}</th>
+        <td>{{favorite3.forecast0}}</td>
+        <td>{{favorite3.forecast1}}</td>
+        <td>{{favorite3.forecast2}}</td>
+        <td>{{favorite3.forecast3}}</td>
+        <td>{{favorite3.forecast4}}</td>
+        <td>{{favorite3.forecast5}}</td>
+        <td>{{favorite3.forecast6}}</td>
+        <td>{{favorite3.forecast7}}</td>
+        <td>{{favorite3.forecast8}}</td>
+        <td>{{favorite3.forecast9}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ current_user.fav4 }}</th>
+        <td>{{favorite4.forecast0}}</td>
+        <td>{{favorite4.forecast1}}</td>
+        <td>{{favorite4.forecast2}}</td>
+        <td>{{favorite4.forecast3}}</td>
+        <td>{{favorite4.forecast4}}</td>
+        <td>{{favorite4.forecast5}}</td>
+        <td>{{favorite4.forecast6}}</td>
+        <td>{{favorite4.forecast7}}</td>
+        <td>{{favorite4.forecast8}}</td>
+        <td>{{favorite4.forecast9}}</td>
+      </tr>
+      {%if (current_user.ikon == 1)%}
+      <tr>
+        <th scope="row">{{deepIkon.name}}</th>
+         <td>{{deepIkon.forecast0}}</td>
+        <td>{{deepIkon.forecast1}}</td>
+        <td>{{deepIkon.forecast2}}</td>
+        <td>{{deepIkon.forecast3}}</td>
+        <td>{{deepIkon.forecast4}}</td>
+        <td>{{deepIkon.forecast5}}</td>
+        <td>{{deepIkon.forecast6}}</td>
+        <td>{{deepIkon.forecast7}}</td>
+        <td>{{deepIkon.forecast8}}</td>
+        <td>{{deepIkon.forecast9}}</td>
+      </tr>
+      {%endif%}
+      {%if (current_user.epic == 1)%}
+      <tr>
+        <th scope="row">{{deepEpic.name}}</th>
+         <td>{{deepEpic.forecast0}}</td>
+        <td>{{deepEpic.forecast1}}</td>
+        <td>{{deepEpic.forecast2}}</td>
+        <td>{{deepEpic.forecast3}}</td>
+        <td>{{deepEpic.forecast4}}</td>
+        <td>{{deepEpic.forecast5}}</td>
+        <td>{{deepEpic.forecast6}}</td>
+        <td>{{deepEpic.forecast7}}</td>
+        <td>{{deepEpic.forecast8}}</td>
+        <td>{{deepEpic.forecast9}}</td>
+      </tr>
+      {%endif%}
+      {%if (current_user.mc == 1)%}
+        <tr>
+          <th scope="row">{{deepMC.name}}</th>
+           <td>{{deepMC.forecast0}}</td>
+          <td>{{deepMC.forecast1}}</td>
+          <td>{{deepMC.forecast2}}</td>
+          <td>{{deepMC.forecast3}}</td>
+          <td>{{deepMC.forecast4}}</td>
+          <td>{{deepMC.forecast5}}</td>
+          <td>{{deepMC.forecast6}}</td>
+          <td>{{deepMC.forecast7}}</td>
+          <td>{{deepMC.forecast8}}</td>
+          <td>{{deepMC.forecast9}}</td>
+        </tr>
+        {%endif%}
+        {%if (current_user.powder == 1)%}
+          <tr>
+            <th scope="row">{{deepPowder.name}}</th>
+             <td>{{deepPowder.forecast0}}</td>
+            <td>{{deepPowder.forecast1}}</td>
+            <td>{{deepPowder.forecast2}}</td>
+            <td>{{deepPowder.forecast3}}</td>
+            <td>{{deepPowder.forecast4}}</td>
+            <td>{{deepPowder.forecast5}}</td>
+            <td>{{deepPowder.forecast6}}</td>
+            <td>{{deepPowder.forecast7}}</td>
+            <td>{{deepPowder.forecast8}}</td>
+            <td>{{deepPowder.forecast9}}</td>
+          </tr>
+          {%endif%}
+          {%if (current_user.indy == 1)%}
+            <tr>
+              <th scope="row">{{deepIndy.name}}</th>
+               <td>{{deepIndy.forecast0}}</td>
+              <td>{{deepIndy.forecast1}}</td>
+              <td>{{deepIndy.forecast2}}</td>
+              <td>{{deepIndy.forecast3}}</td>
+              <td>{{deepIndy.forecast4}}</td>
+              <td>{{deepIndy.forecast5}}</td>
+              <td>{{deepIndy.forecast6}}</td>
+              <td>{{deepIndy.forecast7}}</td>
+              <td>{{deepIndy.forecast8}}</td>
+              <td>{{deepIndy.forecast9}}</td>
+            </tr>
+            {%endif%}
+    </tbody>
+  </table>
+  <div style="text-align: right">
+    <a
+      class="btn btn-primary"
+      href="{{ url_for('views.setfavorites') }}"
+      role="button"
+      >Set Favorites</a
+    >
+  </div>
+</div>
+<script src="{{ url_for('static', filename='javascript/dateIncrement.js') }}">// calculates future dates</script>
+{% endblock %}

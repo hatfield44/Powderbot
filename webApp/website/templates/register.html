@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block title %} Sign Up {% endblock %} {% block
+content %}
+<div>
+  <div style="text-align: center">
+    <a href="#"
+      ><img
+        src="{{url_for('static', filename='logo.png')}}"
+        width="500"
+        height="500"
+    /></a>
+  </div>
+  <br />
+  <br />
+  <h2>Sign Up</h2>
+  <br />
+  <div class="form-group">
+    <form method="POST">
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Enter Email"
+      />
+      <label for="password1">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password1"
+        name="password1"
+        placeholder="Enter Password"
+      />
+      <label for="password2">Confirm Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password2"
+        name="password2"
+        placeholder="Re-Enter Password"
+      />
+      <br />
+      
+      <br />
+      <br />
+      <div style="text-align: right">
+        <button type="submit" class="btn btn-primary btn-lg">Sign-Up</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

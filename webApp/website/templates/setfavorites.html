@@ -1,0 +1,175 @@
+{% extends 'base.html' %} {% block title %}Set Favorites{% endblock %} {% block
+content %}
+<br />
+<form method="POST">
+<div style="text-align: center">
+  <h1>Select your passes</h1>
+  {%if (current_user.ikon == 1)%}
+  <div class="form-check-inline">
+    <label class="form-check-label" for="check1">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        checked ="checked"
+        id="ikon"
+        name="ikon"
+        value="1"
+      />Ikon
+    </label>
+  </div>
+  {%else%}
+  <div class="form-check-inline">
+    <label class="form-check-label" for="check1">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="ikon"
+        name="ikon"
+        value="1"
+      />Ikon
+    </label>
+  </div>
+  {%endif%}
+  {%if (current_user.epic == 1)%}
+  <div class="form-check-inline">
+    <label class="form-check-label" for="check2">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        checked="checked"
+        id="epic"
+        name="epic"
+        value="1"
+      />Epic
+    </label>
+  </div>
+  {%else%}
+  <div class="form-check-inline">
+    <label class="form-check-label" for="check2">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="epic"
+        name="epic"
+        value="1"
+      />Epic
+    </label>
+  </div>
+  {%endif%}
+  {%if (current_user.mc == 1)%}
+  <div class="form-check-inline">
+    <label class="form-check-label" for="check3">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        checked ="checked"
+        id="mc"
+        name="mc"
+        value="1"
+      />Mountain Collective
+    </label>
+  </div>
+  {%else%}
+  <div class="form-check-inline">
+    <label class="form-check-label" for="check3">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="mc"
+        name="mc"
+        value="1"
+      />Mountain Collective
+    </label>
+  </div>
+  {%endif%}
+  {%if (current_user.powder == 1)%}
+  <div class="form-check-inline">
+    <label class="form-check-label" for="check4">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        checked ="checked"
+        id="powder"
+        name="powder"
+        value="1"
+      />Powder Alliance
+    </label>
+  </div>
+  {%else%}
+  <div class="form-check-inline">
+    <label class="form-check-label" for="check4">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="powder"
+        name="powder"
+        value="1"
+      />Powder Alliance
+    </label>
+  </div>
+  {%endif%}
+  {%if (current_user.indy == 1)%}
+  <div class="form-check-inline">
+    <label class="form-check-label" for="check5">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        checked="checked"
+        id="indy"
+        name="indy"
+        value="1"
+      />Indy Pass
+    </label>
+  </div>
+  {%else%}
+  <div class="form-check-inline">
+    <label class="form-check-label" for="check5">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="indy"
+        name="indy"
+        value="1"
+      />Indy Pass
+    </label>
+  </div>
+  {%endif%}
+</div>
+
+<br />
+<br />
+<div style="text-align: center">
+    <h2>Select Favorites</h2>
+    <select name="fav1" style="margin: 1em; height: 2.5em; width: 45%">
+      <option value="{{ current_user.fav1 }}">{{ current_user.fav1 }}</option>
+      {% for location in locations %}
+      <option value="{{ location.name }}">{{ location.name }}</option>
+      {% endfor %}
+    </select>
+    <select name="fav2" style="margin: 1em; height: 2.5em; width: 45%">
+      <option value="{{ current_user.fav2 }}">{{ current_user.fav2 }}</option>
+      {% for location in locations %}
+      <option value="{{ location.name }}">{{ location.name }}</option>
+      {% endfor %}
+    </select>
+    <select name="fav3" style="margin: 1em; height: 2.5em; width: 45%">
+      <option value="{{ current_user.fav3 }}">{{ current_user.fav3 }}</option>
+      {% for location in locations %}
+      <option value="{{ location.name }}">{{ location.name }}</option>
+      {% endfor %}
+    </select>
+    <select name="fav4" style="margin: 1em; height: 2.5em; width: 45%">
+      <option value="{{ current_user.fav4 }}">{{ current_user.fav4 }}</option>
+      {% for location in locations %}
+      <option value="{{ location.name }}">{{ location.name }}</option>
+      {% endfor %}
+    </select>
+    <br/>
+    <div style="text-align: right;">
+      <button  type="submit" class="btn btn-primary btn-lg" >Set Favorites</button>
+    </div>
+  </form>
+</div>
+<br />
+{% endblock %}
+

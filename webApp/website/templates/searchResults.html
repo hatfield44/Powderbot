@@ -1,0 +1,84 @@
+{% extends 'base.html' %} {% block title %}Results{% endblock %} 
+{% block content %}
+<h1 style="text-align: center">{{searchParamater}}</h1>
+<div class="table-responsive">
+  <table class="table table-striped table-dark table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Mountain</th>
+        <th scope="col"><p id="date"></p></th>
+        <th scope="col"><p id="date1"></p></th>
+        <th scope="col"><p id="date2"></p></th>
+        <th scope="col"><p id="date3"></p></th>
+        <th scope="col"><p id="date4"></p></th>
+        <th scope="col"><p id="date5"></p></th>
+        <th scope="col"><p id="date6"></p></th>
+        <th scope="col"><p id="date7"></p></th>
+        <th scope="col"><p id="date8"></p></th>
+        <th scope="col"><p id="date9"></p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{query[0].name}}</th>
+        <td>{{query[0].forecast0}}</td>
+        <td>{{query[0].forecast1}}</td>
+        <td>{{query[0].forecast2}}</td>
+        <td>{{query[0].forecast3}}</td>
+        <td>{{query[0].forecast4}}</td>
+        <td>{{query[0].forecast5}}</td>
+        <td>{{query[0].forecast6}}</td>
+        <td>{{query[0].forecast7}}</td>
+        <td>{{query[0].forecast8}}</td>
+        <td>{{query[0].forecast9}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{query[1].name}}</th>
+         <td>{{query[1].forecast0}}</td>
+        <td>{{query[1].forecast1}}</td>
+        <td>{{query[1].forecast2}}</td>
+        <td>{{query[1].forecast3}}</td>
+        <td>{{query[1].forecast4}}</td>
+        <td>{{query[1].forecast5}}</td>
+        <td>{{query[1].forecast6}}</td>
+        <td>{{query[1].forecast7}}</td>
+        <td>{{query[1].forecast8}}</td>
+        <td>{{query[1].forecast9}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{query[2].name}}</th>
+         <td>{{query[2].forecast0}}</td>
+        <td>{{query[2].forecast1}}</td>
+        <td>{{query[2].forecast2}}</td>
+        <td>{{query[2].forecast3}}</td>
+        <td>{{query[2].forecast4}}</td>
+        <td>{{query[2].forecast5}}</td>
+        <td>{{query[2].forecast6}}</td>
+        <td>{{query[2].forecast7}}</td>
+        <td>{{query[2].forecast8}}</td>
+        <td>{{query[2].forecast9}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{query[3].name}}</th>
+         <td>{{query[3].forecast0}}</td>
+        <td>{{query[3].forecast1}}</td>
+        <td>{{query[3].forecast2}}</td>
+        <td>{{query[3].forecast3}}</td>
+        <td>{{query[3].forecast4}}</td>
+        <td>{{query[3].forecast5}}</td>
+        <td>{{query[3].forecast6}}</td>
+        <td>{{query[3].forecast7}}</td>
+        <td>{{query[3].forecast8}}</td>
+        <td>{{query[3].forecast9}}</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+<br />
+
+</div>
+<br />
+<script src="{{ url_for('static', filename='javascript/dateIncrement.js') }}">// calculates future dates</script>
+{% endblock %}
+
+    
