@@ -25,6 +25,7 @@ Forecast information provided by:
 - webApp version is a Flask app that retrieves the forecast for 329 US Resorts once a day (at 5a.m. in the machines timezone if using the apscheduler) and stores the information 
   in a database.  Users can then view forecast information by various filters
   - If wanting forecast information for a non-resort area (Backcountry) please use another version.
+  - Enter API keys into config.py
   - Uncomment the apscheduler lines in main.py if not using a task scheduler such as Python Anywhere provides 
   - Unregisterd/Not logged in users can view the forecast for the location with the deepest forecast for the day, as well as the location with the deepest forecast for each of the     major passes (Ikon, Epic, Powder Alliance, Mountain Collective, and Indy).  They can also select one location from a drop down menu to see that location's forecast.
   - Registerd/logged in users can select 4 favorite locations and the passes that they have.  The 4 favorite locations as well as the deepest location for any passes they have
