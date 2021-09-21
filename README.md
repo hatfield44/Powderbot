@@ -1,6 +1,6 @@
 **Powderbot**
 
-Various implementations of an app to aid in powder chasing by providing snowfall forecasts for the current day and next 9 days by lattitude and longitude.
+Various implementations of an app to aid in powder chasing by providing snowfall forecasts for the current day and next 9 days by lattitude and longitude.\n
 Forecast information provided by 
   Open Weather  https://home.openweathermap.org/users/sign_up
   Weather API   https://www.weatherapi.com/signup.aspx
