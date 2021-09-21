@@ -1,4 +1,9 @@
 # Program that allows a user to add/check locations for snowfall forecast by lat/lon
+#Forecast information provided by 
+  #Open Weather  https://home.openweathermap.org/users/sign_up
+  #Weather API   https://www.weatherapi.com/signup.aspx
+  #Weatherbit    https://www.weatherbit.io/account/create
+    
 from tkinter import *
 from tkinter import ttk
 import sqlite3
