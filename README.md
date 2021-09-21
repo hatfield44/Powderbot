@@ -2,14 +2,6 @@
 
 Various implementations of an app to aid in powder chasing by providing snowfall forecasts for the current day and next 9 days by lattitude and longitude.
 
-Forecast information provided by:
-
-  Open Weather  https://home.openweathermap.org/users/sign_up
-  
-  Weather API   https://www.weatherapi.com/signup.aspx
-  
-  Weatherbit    https://www.weatherbit.io/account/create
-
 - Hardcoded version requires the user to enter their credentials and location information directly into the code.
   - Only retrieves the forecast for one location and outputs the forecast as a tweet
   - Prints forecast/tweet to the terminal
@@ -32,3 +24,11 @@ Forecast information provided by:
     selected forecasts can then be viewed on the favorites page.
   - Registerd/logged in users can also search/filter by Pass, State, or Reigon which will display the 4 deepest forecasts that match the filter.
   - Live version viewable at https://powderbot.pythonanywhere.com/
+
+Forecast information provided by:
+
+  Open Weather  https://home.openweathermap.org/users/sign_up
+  
+  Weather API   https://www.weatherapi.com/signup.aspx
+  
+  Weatherbit    https://www.weatherbit.io/account/create
