@@ -2,9 +2,12 @@
 
 Various implementations of an app to aid in powder chasing by providing snowfall forecasts for the current day and next 9 days by lattitude and longitude.
 
-Forecast information provided by 
+Forecast information provided by:
+
   Open Weather  https://home.openweathermap.org/users/sign_up
+  
   Weather API   https://www.weatherapi.com/signup.aspx
+  
   Weatherbit    https://www.weatherbit.io/account/create
 
 - Hardcoded version requires the user to enter their credentials and location information directly into the code.
