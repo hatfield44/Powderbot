@@ -6,6 +6,6 @@ from website import create_app
 app = create_app()
 #scheduler = BackgroundScheduler()
 if __name__ == '__main__':
-    #scheduler.add_job(getForecast, trigger = 'cron', hour = 10)
+    #scheduler.add_job(getForecast, trigger = 'cron', hour = 5)
     #scheduler.start()
     app.run(use_reloader=False)
