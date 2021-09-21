@@ -2,6 +2,10 @@
 # This program when ran gathers snowfall amount forecast information for a location you choose and averages it for output
 # When promted whether or not to post to twitter, n should be selected if forecasting for multiple locations as the tweet
 # will grow to large to post.
+#Forecast information provided by 
+  #Open Weather  https://home.openweathermap.org/users/sign_up
+  #Weather API   https://www.weatherapi.com/signup.aspx
+  #Weatherbit    https://www.weatherbit.io/account/create
 #########################################################################################################################
 import os.path
 import requests
