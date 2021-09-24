@@ -98,7 +98,7 @@ def getForecast():
 
 
     def dbForecast():
-        for i in range(1, 4):
+        for i in range(1, 330):
             for row in c.execute("SELECT lat FROM location WHERE id =" + str(i)):
                 lattitude = str(row).replace("',)", "")
                 lattitude = lattitude.replace("('", "")
