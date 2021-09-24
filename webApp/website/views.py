@@ -1,9 +1,8 @@
-from flask import Blueprint, render_template, request, url_for, flash, redirect, session
+from flask import Blueprint, render_template, request, flash, redirect, session
 from flask_login import login_required, current_user
-from flask_sqlalchemy import SQLAlchemy
-from .models import Location, User
+from .models import Location
 from website import db
-from sqlalchemy import func, desc, text
+from sqlalchemy import func, desc
 
 views = Blueprint('views', __name__)
 
