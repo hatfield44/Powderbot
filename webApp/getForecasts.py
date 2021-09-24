@@ -13,11 +13,6 @@ def getForecast():
     conn = sqlite3.connect('website/database.db')
     c = conn.cursor()
 
-    # Enter your credentials in the appropriate variable between the ""
-    #openWeatherAppID = config.openWeatherAppID # Enter your openweather App ID
-    #weatherAPIKey = config.weatherAPIKey # Enter your weatherapi.com API Key
-    #weatherBitKey = config.weatherBitKey # Enter your weatherbit.io API Key
-
 
     # Gets forecast from Open Weather
     def openWeatherCall(lattitude, longitude, openWeatherAppID):
