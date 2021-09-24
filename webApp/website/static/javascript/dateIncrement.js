@@ -17,43 +17,70 @@ if (y%4 != 0){
 }
 
  for (let i = 1; i < 11; i++){
-   // increment day
+   // increment day before August
    // even months with 30 days
-   if (m%2 == 0 && d+i <= 30 && m != 2){
-       document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
-   // odd months with 31 days
-    } else if (m%2 == 1 && d+i <= 31 && m != 2){
-       document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
-   // feb that odd bastard
-    } else if (m == 2 && d+i <= 28 && leapYear == false){
-       document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
-       // feb in leap year
-    } else if (m == 2 && d+i <= 29 && leapYear == true){
-       document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
-    } 
+   if (m <8){
+      if (m%2 == 0 && d+i <= 30 && m != 2){
+         document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
+      // odd months with 31 days
+      } else if (m%2 == 1 && d+i <= 31 && m != 2){
+         document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
+      // feb that odd bastard
+      } else if (m == 2 && d+i <= 28 && leapYear == false){
+         document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
+         // feb in leap year
+      } else if (m == 2 && d+i <= 29 && leapYear == true){
+         document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
+      } 
 
-    // increment month
-    if (m%2 == 0 && d+i > 30 && m != 2 && m < 12){
-       j=i;
-       d = 1;
-       m += 1;
-       document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
-    } else if (m%2 == 1 && d+i > 31 && m < 12){
-       j=i;
-       d = 1;
-       m += 1;
-       document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
-    } else if (m == 2 && d+i > 28 && leapYear == false){
-       j=i;
-       d = 1;
-       m += 1;
-       document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
-    } else if ( m== 2 && d+i > 29 && leapYear == true){
-       j=i;
-       d = 1;
-       m += 1;
-       document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
-    }
+      // increment month
+      if (m%2 == 0 && d+i > 30 && m != 2 && m < 12){
+         j=i;
+         d = 1;
+         m += 1;
+         document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
+      } else if (m%2 == 1 && d+i > 31 && m < 12){
+         j=i;
+         d = 1;
+         m += 1;
+         document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
+      } else if (m == 2 && d+i > 28 && leapYear == false){
+         j=i;
+         d = 1;
+         m += 1;
+         document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
+      } else if ( m== 2 && d+i > 29 && leapYear == true){
+         j=i;
+         d = 1;
+         m += 1;
+         document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
+      }
+   }
+   // Handles the odd/even 31/30 switch in August
+   if (m >= 8){
+      //Increment day August or after
+      // odd months with 30 days
+      if (m%2 == 1 && d+i <= 30 && m != 2){
+         document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
+      // even months with 31 days
+      } else if (m%2 == 0 && d+i <= 31 && m != 2){
+         document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
+      }
+
+      // increment month
+      if (m%2 == 1 && d+i > 30 && m != 2 && m < 12){
+         j=i;
+         d = 1;
+         m += 1;
+         document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
+      } else if (m%2 == 0 && d+i > 31 && m < 12){
+         j=i;
+         d = 1;
+         m += 1;
+         document.getElementById("date"+i).innerHTML = m + "/" + (d+i-j) + "/" + y;
+      }
+   }
+
 
     // increment year
     if (m == 12 && d+i > 31){
