@@ -1,3 +1,5 @@
+#!/usr/bin/python3.8
+
 import requests
 import time
 from datetime import datetime
@@ -12,6 +14,12 @@ def getForecast():
 
     conn = sqlite3.connect('website/database.db')
     c = conn.cursor()
+
+    # Enter your credentials in the appropriate variable between the ""
+    #openWeatherAppID = config.openWeatherAppID # Enter your openweather App ID
+    #weatherAPIKey = config.weatherAPIKey # Enter your weatherapi.com API Key
+    #weatherBitKey = config.weatherBitKey # Enter your weatherbit.io API Key
+
 
 
     # Gets forecast from Open Weather
@@ -29,7 +37,7 @@ def getForecast():
                 forecastDays[date] = (day["snow"]/2.54)
             else:
                 forecastDays[date] = 0
-        
+
         return forecastDays # Returns dictonary of forecast by days
 
 
@@ -44,13 +52,13 @@ def getForecast():
         # Loops through forecast data adding the relevant info to the forecastDays dictonary
         for entry in forecastData["forecast"]["forecastday"]:
             #Gets date
-            LongDate = entry["date"] 
+            LongDate = entry["date"]
             date = LongDate[5:7], "/", LongDate[8:10], "/", LongDate[2:4]
             date = "".join(date)
             if entry["day"]["daily_will_it_snow"] == 1:
                 forecastDays[date] = entry["day"]["totalprecip_in"]
             else:
-                forecastDays[date] = 0    
+                forecastDays[date] = 0
         return forecastDays # Returns dictonary of forecast by days
 
 
@@ -74,26 +82,51 @@ def getForecast():
         aggregateSnowfall = {} # Holds aggregate snowfall for each day while getting forecast
         aggregateForecast = {} # Holds aggregate forecast form each call
 
-        openWeather = openWeatherCall(lattitude, longitude, openWeatherAppID)
-        weatherAPI = weatherAPICall(lattitude, longitude, weatherAPIKey)
-        weatherBit = weatherBitCall(lattitude, longitude, weatherBitKey)
+        try:
+            weatherBit = weatherBitCall(lattitude, longitude, weatherBitKey)
+        except:
+            print("WeatherBit Error")
+        else:
+            for date, forecast in weatherBit.items():
+                aggregateSnowfall[date] = [forecast]
+            retrievedDays = 10
 
-        for date, forecast in weatherBit.items():
-            aggregateSnowfall[date] = [forecast]
+        try:
+            weatherAPI = weatherAPICall(lattitude, longitude, weatherAPIKey)
+        except:
+            print("WeatherAPI Error")
+        else:
+            for date, forecast in weatherAPI.items():
+                try:
+                    aggregateSnowfall[date].append(forecast)
+                except:
+                    aggregateSnowfall[date] = [forecast]
+                    retrievedDays = 8
 
-        for date, forecast in weatherAPI.items():
-            aggregateSnowfall[date].append(forecast)
+        try:
+            openWeather = openWeatherCall(lattitude, longitude, openWeatherAppID)
+        except:
+            print("OpenWeather Error")
+        else:
+            for date, forecast in openWeather.items():
+                try:
+                    aggregateSnowfall[date].append(forecast)
+                except:
+                    aggregateSnowfall[date] = [forecast]
+                    retrievedDays = 3
 
-        for date, forecast in openWeather.items():
-                aggregateSnowfall[date].append(forecast)
 
         for date, prediction in aggregateSnowfall.items():
             aggregateForecast[date] = "{:.2f}".format(sum(aggregateSnowfall[date])/len(aggregateSnowfall[date]))
+        aggregateForecast["days"] = retrievedDays
+
         return aggregateForecast
 
 
     def dbForecast():
         for i in range(1, 330):
+            for row in c.execute("SELECT name FROM location WHERE id =" + str(i)):
+                print(str(row)[2:-3])
             for row in c.execute("SELECT lat FROM location WHERE id =" + str(i)):
                 lattitude = str(row).replace("',)", "")
                 lattitude = lattitude.replace("('", "")
@@ -106,8 +139,8 @@ def getForecast():
             for date, amount in forecast.items():
                 output.append(amount)
             print(output)
-            # store in db 
-            for j in range(0, 10):
+            # store in db
+            for j in range(0, forecast["days"]):
                 column = "forecast" + str(j)
                 c.execute("UPDATE location SET " + column + "= " + output[j] + " WHERE id =" + str(i))
 
