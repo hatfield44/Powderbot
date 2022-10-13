@@ -39,4 +39,8 @@ class Location(db.Model):
     forecast7 = db.Column(db.Float())
     forecast8 = db.Column(db.Float())
     forecast9 = db.Column(db.Float())
-    
+    forecast10 = db.Column(db.Float())
+    forecast11 = db.Column(db.Float())
+    forecast12 = db.Column(db.Float())
+    forecast13 = db.Column(db.Float())
+    forecast14 = db.Column(db.Float())
