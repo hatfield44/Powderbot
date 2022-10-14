@@ -12,7 +12,7 @@ def test():
 def getForecast():
     print("\nGetting Forecast\n")
 
-    conn = sqlite3.connect('/database.db')
+    conn = sqlite3.connect('website/database.db')
     c = conn.cursor()
 
     # Gets forecast from Visual Crossing
