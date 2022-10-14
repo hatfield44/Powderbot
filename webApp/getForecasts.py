@@ -35,6 +35,7 @@ def getForecast():
 
         return forecastDays # Returns dictonary of forecast by days
 
+
     # Gets forecast from Open Weather
     def openWeatherCall(lattitude, longitude, openWeatherAppID):
         # Creates URL for call
@@ -50,7 +51,6 @@ def getForecast():
                 forecastDays[date] = (day["snow"]/2.54)
             else:
                 forecastDays[date] = 0
-
         return forecastDays # Returns dictonary of forecast by days
 
 
@@ -72,7 +72,6 @@ def getForecast():
                 forecastDays[date] = entry["day"]["totalprecip_in"]
             else:
                 forecastDays[date] = 0
-
         return forecastDays # Returns dictonary of forecast by days
 
 
@@ -93,6 +92,7 @@ def getForecast():
 
         return forecastDays # Returns dictonary of forecast by days
 
+
     def forecastAggregation(lattitude, longitude):
         aggregateSnowfall = {} # Holds aggregate snowfall for each day while getting forecast
         aggregateForecast = {} # Holds aggregate forecast form each call
@@ -108,19 +108,6 @@ def getForecast():
                 aggregateSnowfall[date] = [forecast]
                 retrievedDays = 15
 
-        # Try calling WeatherBit and print error message if problem arises otherwise add days forecast to aggregateSnowfall
-        try:
-            weatherBit = weatherBitCall(lattitude, longitude, weatherBitKey)
-        except:
-            print("WeatherBit Error")
-        else:
-            for date, forecast in weatherBit.items():
-                try:
-                    aggregateSnowfall[date].append([forecast])
-                except:
-                    aggregateSnowfall[date] = [forecast]
-                    retrievedDays = 10
-
         # Try calling OpenWeather and print error message if problem arises otherwise add days forecast to aggregateSnowfall
         try:
             openWeather = openWeatherCall(lattitude, longitude, openWeatherAppID)
@@ -133,6 +120,19 @@ def getForecast():
                 except:
                     aggregateSnowfall[date] = [forecast]
                     retrievedDays = 8
+
+        # Try calling WeatherBit and print error message if problem arises otherwise add days forecast to aggregateSnowfall
+        try:
+            weatherBit = weatherBitCall(lattitude, longitude, weatherBitKey)
+        except:
+            print("WeatherBit Error")
+        else:
+            for date, forecast in weatherBit.items():
+                try:
+                    aggregateSnowfall[date].append(forecast)
+                except:
+                    aggregateSnowfall[date] = [forecast]
+                    retrievedDays = 3
 
         # Try calling WeatherAPI and print error message if problem arises otherwise add days forecast to aggregateSnowfall
         try:
@@ -179,6 +179,7 @@ def getForecast():
                 c.execute("UPDATE location SET " + column + "= " + output[j] + " WHERE id =" + str(i))
 
             conn.commit()
+
 
     dbForecast()
     conn.close()
