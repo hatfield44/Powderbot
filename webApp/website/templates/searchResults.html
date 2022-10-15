@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block title %}Results{% endblock %} 
+{% extends 'base.html' %} {% block title %}Results{% endblock %}
 {% block content %}
 <h1 style="text-align: center">{{searchParamater}}</h1>
 <div class="table-responsive">
@@ -16,6 +16,11 @@
         <th scope="col"><p id="date7"></p></th>
         <th scope="col"><p id="date8"></p></th>
         <th scope="col"><p id="date9"></p></th>
+        <th scope="col"><p id="date10"></p></th>
+        <th scope="col"><p id="date11"></p></th>
+        <th scope="col"><p id="date12"></p></th>
+        <th scope="col"><p id="date13"></p></th>
+        <th scope="col"><p id="date14"></p></th>
       </tr>
     </thead>
     <tbody>
@@ -31,6 +36,11 @@
         <td>{{query[0].forecast7}}</td>
         <td>{{query[0].forecast8}}</td>
         <td>{{query[0].forecast9}}</td>
+        <td>{{query[0].forecast10}}</td>
+        <td>{{query[0].forecast11}}</td>
+        <td>{{query[0].forecast12}}</td>
+        <td>{{query[0].forecast13}}</td>
+        <td>{{query[0].forecast14}}</td>
       </tr>
       <tr>
         <th scope="row">{{query[1].name}}</th>
@@ -44,6 +54,11 @@
         <td>{{query[1].forecast7}}</td>
         <td>{{query[1].forecast8}}</td>
         <td>{{query[1].forecast9}}</td>
+        <td>{{query[1].forecast10}}</td>
+        <td>{{query[1].forecast11}}</td>
+        <td>{{query[1].forecast12}}</td>
+        <td>{{query[1].forecast13}}</td>
+        <td>{{query[1].forecast14}}</td>
       </tr>
       <tr>
         <th scope="row">{{query[2].name}}</th>
@@ -57,6 +72,11 @@
         <td>{{query[2].forecast7}}</td>
         <td>{{query[2].forecast8}}</td>
         <td>{{query[2].forecast9}}</td>
+        <td>{{query[2].forecast10}}</td>
+        <td>{{query[2].forecast11}}</td>
+        <td>{{query[2].forecast12}}</td>
+        <td>{{query[2].forecast13}}</td>
+        <td>{{query[2].forecast14}}</td>
       </tr>
       <tr>
         <th scope="row">{{query[3].name}}</th>
@@ -70,15 +90,18 @@
         <td>{{query[3].forecast7}}</td>
         <td>{{query[3].forecast8}}</td>
         <td>{{query[3].forecast9}}</td>
+        <td>{{query[3].forecast10}}</td>
+        <td>{{query[3].forecast11}}</td>
+        <td>{{query[3].forecast12}}</td>
+        <td>{{query[3].forecast13}}</td>
+        <td>{{query[3].forecast14}}</td>
       </tr>
     </tbody>
 </table>
 </div>
 <br />
-
 </div>
 <br />
 <script src="{{ url_for('static', filename='javascript/dateIncrement.js') }}">// calculates future dates</script>
 {% endblock %}
 
-    
