@@ -32,3 +32,5 @@ Forecast information provided by:
   Weather API   https://www.weatherapi.com/signup.aspx
   
   Weatherbit    https://www.weatherbit.io/account/create
+  
+  Visual  Crossing  https://www.visualcrossing.com/sign-up
