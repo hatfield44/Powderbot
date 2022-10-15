@@ -16,6 +16,10 @@ content %}
         <th scope="col"><p id="date7"></p></th>
         <th scope="col"><p id="date8"></p></th>
         <th scope="col"><p id="date9"></p></th>
+        <th scope="col"><p id="date10"></p></th>
+        <th scope="col"><p id="date11"></p></th>
+        <th scope="col"><p id="date12"></p></th>
+        <th scope="col"><p id="date13"></p></th>
       </tr>
     </thead>
     <tbody>
@@ -31,6 +35,10 @@ content %}
         <td>{{favorite1.forecast7}}</td>
         <td>{{favorite1.forecast8}}</td>
         <td>{{favorite1.forecast9}}</td>
+        <td>{{favorite1.forecast10}}</td>
+        <td>{{favorite1.forecast11}}</td>
+        <td>{{favorite1.forecast12}}</td>
+        <td>{{favorite1.forecast13}}</td>
       </tr>
       <tr>
         <th scope="row">{{ current_user.fav2 }}</th>
@@ -44,6 +52,10 @@ content %}
         <td>{{favorite2.forecast7}}</td>
         <td>{{favorite2.forecast8}}</td>
         <td>{{favorite2.forecast9}}</td>
+        <td>{{favorite2.forecast10}}</td>
+        <td>{{favorite2.forecast11}}</td>
+        <td>{{favorite2.forecast12}}</td>
+        <td>{{favorite2.forecast13}}</td>
       </tr>
       <tr>
         <th scope="row">{{ current_user.fav3 }}</th>
@@ -57,6 +69,10 @@ content %}
         <td>{{favorite3.forecast7}}</td>
         <td>{{favorite3.forecast8}}</td>
         <td>{{favorite3.forecast9}}</td>
+        <td>{{favorite3.forecast10}}</td>
+        <td>{{favorite3.forecast11}}</td>
+        <td>{{favorite3.forecast12}}</td>
+        <td>{{favorite3.forecast13}}</td>
       </tr>
       <tr>
         <th scope="row">{{ current_user.fav4 }}</th>
@@ -70,11 +86,15 @@ content %}
         <td>{{favorite4.forecast7}}</td>
         <td>{{favorite4.forecast8}}</td>
         <td>{{favorite4.forecast9}}</td>
+        <td>{{favorite4.forecast10}}</td>
+        <td>{{favorite4.forecast11}}</td>
+        <td>{{favorite4.forecast12}}</td>
+        <td>{{favorite4.forecast13}}</td>
       </tr>
       {%if (current_user.ikon == 1)%}
       <tr>
         <th scope="row">{{deepIkon.name}}</th>
-         <td>{{deepIkon.forecast0}}</td>
+        <td>{{deepIkon.forecast0}}</td>
         <td>{{deepIkon.forecast1}}</td>
         <td>{{deepIkon.forecast2}}</td>
         <td>{{deepIkon.forecast3}}</td>
@@ -84,12 +104,16 @@ content %}
         <td>{{deepIkon.forecast7}}</td>
         <td>{{deepIkon.forecast8}}</td>
         <td>{{deepIkon.forecast9}}</td>
+        <td>{{deepIkon.forecast10}}</td>
+        <td>{{deepIkon.forecast11}}</td>
+        <td>{{deepIkon.forecast12}}</td>
+        <td>{{deepIkon.forecast13}}</td>
       </tr>
       {%endif%}
       {%if (current_user.epic == 1)%}
       <tr>
         <th scope="row">{{deepEpic.name}}</th>
-         <td>{{deepEpic.forecast0}}</td>
+        <td>{{deepEpic.forecast0}}</td>
         <td>{{deepEpic.forecast1}}</td>
         <td>{{deepEpic.forecast2}}</td>
         <td>{{deepEpic.forecast3}}</td>
@@ -99,12 +123,16 @@ content %}
         <td>{{deepEpic.forecast7}}</td>
         <td>{{deepEpic.forecast8}}</td>
         <td>{{deepEpic.forecast9}}</td>
+        <td>{{deepEpic.forecast10}}</td>
+        <td>{{deepEpic.forecast11}}</td>
+        <td>{{deepEpic.forecast12}}</td>
+        <td>{{deepEpic.forecast13}}</td>
       </tr>
       {%endif%}
       {%if (current_user.mc == 1)%}
         <tr>
           <th scope="row">{{deepMC.name}}</th>
-           <td>{{deepMC.forecast0}}</td>
+          <td>{{deepMC.forecast0}}</td>
           <td>{{deepMC.forecast1}}</td>
           <td>{{deepMC.forecast2}}</td>
           <td>{{deepMC.forecast3}}</td>
@@ -114,12 +142,16 @@ content %}
           <td>{{deepMC.forecast7}}</td>
           <td>{{deepMC.forecast8}}</td>
           <td>{{deepMC.forecast9}}</td>
+          <td>{{deepMC.forecast10}}</td>
+          <td>{{deepMC.forecast11}}</td>
+          <td>{{deepMC.forecast12}}</td>
+          <td>{{deepMC.forecast13}}</td>
         </tr>
         {%endif%}
         {%if (current_user.powder == 1)%}
-          <tr>
+        <tr>
             <th scope="row">{{deepPowder.name}}</th>
-             <td>{{deepPowder.forecast0}}</td>
+            <td>{{deepPowder.forecast0}}</td>
             <td>{{deepPowder.forecast1}}</td>
             <td>{{deepPowder.forecast2}}</td>
             <td>{{deepPowder.forecast3}}</td>
@@ -129,21 +161,29 @@ content %}
             <td>{{deepPowder.forecast7}}</td>
             <td>{{deepPowder.forecast8}}</td>
             <td>{{deepPowder.forecast9}}</td>
+            <td>{{deepPowder.forecast10}}</td>
+            <td>{{deepPowder.forecast11}}</td>
+            <td>{{deepPowder.forecast12}}</td>
+            <td>{{deepPowder.forecast13}}</td>
           </tr>
-          {%endif%}
-          {%if (current_user.indy == 1)%}
-            <tr>
-              <th scope="row">{{deepIndy.name}}</th>
-               <td>{{deepIndy.forecast0}}</td>
-              <td>{{deepIndy.forecast1}}</td>
-              <td>{{deepIndy.forecast2}}</td>
-              <td>{{deepIndy.forecast3}}</td>
-              <td>{{deepIndy.forecast4}}</td>
-              <td>{{deepIndy.forecast5}}</td>
-              <td>{{deepIndy.forecast6}}</td>
-              <td>{{deepIndy.forecast7}}</td>
-              <td>{{deepIndy.forecast8}}</td>
-              <td>{{deepIndy.forecast9}}</td>
+        {%endif%}
+        {%if (current_user.indy == 1)%}
+        <tr>
+            <th scope="row">{{deepIndy.name}}</th>
+            <td>{{deepIndy.forecast0}}</td>
+            <td>{{deepIndy.forecast1}}</td>
+            <td>{{deepIndy.forecast2}}</td>
+            <td>{{deepIndy.forecast3}}</td>
+            <td>{{deepIndy.forecast4}}</td>
+            <td>{{deepIndy.forecast5}}</td>
+            <td>{{deepIndy.forecast6}}</td>
+            <td>{{deepIndy.forecast7}}</td>
+            <td>{{deepIndy.forecast8}}</td>
+            <td>{{deepIndy.forecast9}}</td>
+            <td>{{deepIndy.forecast10}}</td>
+            <td>{{deepIndy.forecast11}}</td>
+            <td>{{deepIndy.forecast12}}</td>
+            <td>{{deepIndy.forecast13}}</td>
             </tr>
             {%endif%}
     </tbody>
